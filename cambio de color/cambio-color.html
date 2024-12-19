@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambio de Color de Fondo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            color: white;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+        }
+        .red { background-color: red; }
+        .green { background-color: green; }
+        .blue { background-color: blue; }
+        .reset { background-color: rgb(128, 128, 128); }
+        button:hover {
+            opacity: 0.8;
+        }
+    </style> 
+</head>
+<body>
+    <h1>Cambia el Color de Fondo</h1>
+    <button class="red" onclick="cambiarColor('red')">Rojo</button>
+    <button class="green" onclick="cambiarColor('green')">Verde</button>
+    <button class="blue" onclick="cambiarColor('blue')">Azul</button>
+    <button class="reset" onclick="cambiarColor('transparent')">Restablecer</button>
+
+    <script>
+        function cambiarColor(color) {
+            document.body.style.backgroundColor = color;
+        }
+    </script>
+</body>
+</html>

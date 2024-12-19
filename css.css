@@ -1,0 +1,131 @@
+        /* Estilos generales */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background: linear-gradient(to right, #222449, #888df8);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+        input[type="file"] {
+            display: none;
+        }
+        label {
+            background-color: #000000;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+            width: 200px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        label:hover {
+            background: linear-gradient(to right, #222449, #888df8);
+        }
+        /* Estilos para las carpetas y archivos */
+        .folder-section {
+            margin-bottom: 0px;
+            display: grid;
+            grid-template-rows: repeat(auto-fill, 50px);
+            gap: 20px;
+        }
+        .folder {
+            cursor: pointer;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 5px;
+            border-radius: 8px;
+            margin: 5px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 16px;
+            text-align: center;
+        }
+        .folder:hover {
+            background-color: #9a9a9a;
+        }
+        .file-list {
+            padding-left: 20px;
+            display: none;
+            list-style-type: none;
+            color: white;
+        }
+        .file-item {
+            padding: 5px 0;
+            cursor: pointer;
+        }
+        .file-item:hover {
+            text-decoration: underline;
+        }
+        .file-view {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .file-view iframe{
+            margin-top: 20px;
+            text-align: center;
+            color: white;
+        }
+        .back-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        .back-btn:hover {
+            background-color: #45a049;
+        }
+        .new-btn {
+            background-color: #f44336;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+            width: 200px;
+            text-align: center;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        .new-btn:hover {
+            background-color: #d32f2f;
+        }
+
+        /* Estilos para el pie de página */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #777;
+        }
+        footer a {
+            color: linear-gradient(to right, #222449, #888df8);
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }

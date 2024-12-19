@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Juego de Adivinanza</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            color: white;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+        #mensaje {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Adivina el Número</h1>
+    <p>Adivina el número secreto entre 1 y 100.</p>
+    <input type="number" id="adivinanza" placeholder="Ingresa un número">
+    <button onclick="adivinar()">Adivinar</button>
+    <button onclick="reiniciar()">Reiniciar</button>
+    <p id="mensaje"></p>
+
+    <script>
+        var numeroSecreto = Math.floor(Math.random() * 100) + 1;
+
+        function adivinar() {
+            var entrada = document.getElementById("adivinanza").value;
+            var adivinanza = parseInt(entrada);
+
+            if (isNaN(adivinanza) || adivinanza < 1 || adivinanza > 100) {
+                document.getElementById("mensaje").innerHTML = "Por favor, ingresa un número válido entre 1 y 100.";
+                return;
+            }
+
+            if (adivinanza === numeroSecreto) {
+                document.getElementById("mensaje").innerHTML = "🎉 ¡Correcto! El número era " + numeroSecreto + ".";
+                deshabilitarInputs();
+            } else if (adivinanza > numeroSecreto) {
+                document.getElementById("mensaje").innerHTML = "Demasiado alto. Intenta de nuevo.";
+            } else {
+                document.getElementById("mensaje").innerHTML = "Demasiado bajo. Intenta de nuevo.";
+            }
+        }
+
+        function reiniciar() {
+            numeroSecreto = Math.floor(Math.random() * 100) + 1;
+            document.getElementById("adivinanza").value = "";
+            document.getElementById("mensaje").innerHTML = "";
+            habilitarInputs();
+        }
+
+        function deshabilitarInputs() {
+            document.getElementById("adivinanza").disabled = true;
+        }
+
+        function habilitarInputs() {
+            document.getElementById("adivinanza").disabled = false;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            color: white;
+        }
+        input {
+            padding: 10px;
+            width: 200px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 10px;
+            background: #f9f9f9;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            color: black;
+        }
+        li:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Tareas</h1>
+    <input type="text" id="tarea" placeholder="Nueva tarea">
+    <button onclick="agregarTarea()">Añadir</button>
+    <ul id="lista"></ul>
+
+    <script>
+        function agregarTarea() {
+            var tarea = document.getElementById("tarea").value.trim(); // Elimina espacios al inicio y al final
+            if (tarea) {
+                var li = document.createElement("li");
+                li.textContent = tarea;
+                li.onclick = function() {
+                    if (confirm("¿Estás seguro de que deseas eliminar esta tarea?")) {
+                        this.parentNode.removeChild(this);
+                    }
+                };
+                document.getElementById("lista").appendChild(li);
+                document.getElementById("tarea").value = "";
+            } else {
+                alert("Por favor, escribe una tarea válida.");
+            }
+        }
+    </script>
+</body>
+</html>

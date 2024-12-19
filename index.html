@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contenedor de Carpetas y Archivos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Sube una Carpeta y Visualiza sus Archivos</h2>
+    
+    <!-- Botón para subir una carpeta -->
+    <label for="folderInput" id="uploadBtn">Selecciona una Carpeta</label>
+    <input type="file" id="folderInput" webkitdirectory directory multiple />
+
+    <!-- Botón para limpiar la vista o volver a subir carpetas -->
+    <button id="newBtn" class="new-btn" style="display: none;" onclick="clearView()">Limpiar Vista o Subir Nuevas Carpetas</button>
+
+    <!-- Secciones para mostrar las carpetas -->
+    <div id="folderSections"></div>
+
+    <!-- Vista de archivo individual -->
+    <div id="fileView" class="file-view">
+        <h3>Vista del Archivo</h3>
+        <iframe id="fileIframe" style="width: 100%; height: 500px; color: white; align-items: center;" frameborder="0"></iframe>
+        <button class="back-btn" onclick="goBack()">Volver Atrás</button>
+    </div>
+</div>
+
+<script src="js.js"></script>
+
+<!-- Pie de página con derechos de autor y enlaces -->
+<footer>
+    <p>&copy; 2024 <a href="https://www.linkedin.com/in/jesus-felipe-cordoba-echandia-a5160723b/" target="_blank">Jesus Felipe Cordoba Echandia</a>. Todos los derechos reservados.</p>
+    <p>Visita mis perfiles en: 
+        <a href="https://www.linkedin.com/in/jesus-felipe-cordoba-echandia-a5160723b/" target="_blank">LinkedIn</a> |
+        <a href="https://github.com/Nesus3Ch4n" target="_blank">GitHub</a>
+    </p>
+</footer>
+
+</body>
+</html>
